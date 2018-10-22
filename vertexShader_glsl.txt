@@ -1,0 +1,14 @@
+#version 450 core
+
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec3 inColor;
+
+out vec4 fragColorData;
+
+uniform mat4 orthoMatrix;
+
+void main()
+{
+	gl_Position = orthoMatrix * vec4(position, 1);
+	fragColorData = vec4(inColor, 1);
+}
